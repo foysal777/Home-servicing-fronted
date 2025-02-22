@@ -1,6 +1,8 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import TruelysellWorkflow from './Work';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
 
@@ -108,12 +110,12 @@ const Home = () => {
 
           <div className="overflow-hidden w-full bg-gray-100 py-10 ">
 
-          <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold">
-          Our Featured <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">Services</span>
-        </h1>
-        <p className="text-gray-600 mt-2">Each listing is designed to be clear and concise, providing customers</p>
-      </div>
+            <div className="text-center mb-6">
+              <h1 className="text-3xl font-bold">
+                Our Featured <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">Services</span>
+              </h1>
+              <p className="text-gray-600 mt-2">Each listing is designed to be clear and concise, providing customers</p>
+            </div>
             <motion.div
               className="flex w-max gap-4"
               animate={{ x: ["0%", "-100%"] }}
@@ -128,7 +130,7 @@ const Home = () => {
                     <Star className="w-5 h-5 text-yellow-500" />
                     <Star className="w-5 h-5 text-yellow-500" />
                     <Star className="w-5 h-5 text-yellow-500" />
-                  
+
                     <Star className="w-5 h-5 text-gray-300" />
                   </div>
                 </div>
@@ -138,7 +140,12 @@ const Home = () => {
 
         </section>
 
-
+        <section>
+          <TruelysellWorkflow></TruelysellWorkflow>
+        </section>
+        <section>
+          <Footer></Footer>
+        </section>
 
       </section>
     </div>
