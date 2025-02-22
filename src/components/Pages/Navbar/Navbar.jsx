@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink , Navigate, useNavigate} from "react-router-dom";
 import { Menu, X, ChevronDown, User, Lock } from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [pagesOpen, setPagesOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="bg-white shadow-md w-full fixed top-0 z-50">
@@ -38,7 +39,7 @@ const Navbar = () => {
               Categories <ChevronDown size={16} />
             </button>
             <ul className={`${categoriesOpen ? "block" : "hidden"} absolute bg-white shadow-md rounded-md mt-2 py-2 w-40`}> 
-              {['Web Design', 'SEO', 'Marketing', 'Development', 'Graphics'].map((cat) => (
+              {['Appliance', 'Car Wash', 'Plumbing', 'Computer', 'Construction'].map((cat) => (
                 <li key={cat} className="p-2 hover:bg-gray-100"><NavLink to={`/${cat.toLowerCase()}`} className={({ isActive }) => isActive ? "text-blue-600" : "hover:text-pink-600"}>{cat}</NavLink></li>
               ))}
             </ul>
@@ -61,10 +62,10 @@ const Navbar = () => {
 
         {/* Buttons */}
         <div className="hidden md:flex items-center gap-4">
-          <button className="flex items-center bg-gray-200 px-4 py-2 rounded-md text-gray-700 hover:bg-gray-300">
+           <button onClick={()=>{navigate('/login')}} className="flex items-center bg-gray-200 px-4 py-2 rounded-md text-gray-700 hover:bg-gray-300">
             <Lock size={16} className="mr-2" /> Sign In
           </button>
-          <button className="flex items-center bg-gradient-to-r from-pink-500 to-blue-500 px-4 py-2 rounded-md text-white hover:opacity-80">
+          <button onClick={()=>{navigate('/register')}} className="flex items-center bg-gradient-to-r from-pink-500 to-blue-500 px-4 py-2 rounded-md text-white hover:opacity-80">
             <User size={16} className="mr-2" /> Join Us
           </button>
         </div>

@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
       </div>
       <button 
-        className="fixed bottom-4 right-4 bg-pink-500 text-white p-3 rounded-full shadow-lg"
+        className="transform transition-transform duration-300 hover:scale-120 fixed bottom-4 right-4 bg-pink-500 text-white px-3 py-2 text-xl rounded-full shadow-lg"
         onClick={scrollToTop}
       >
         ↑

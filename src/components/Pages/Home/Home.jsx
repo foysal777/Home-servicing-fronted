@@ -117,12 +117,12 @@ const Home = () => {
               <p className="text-gray-600 mt-2">Each listing is designed to be clear and concise, providing customers</p>
             </div>
             <motion.div
-              className="flex w-max gap-4"
+              className="flex w-max gap-4 "
               animate={{ x: ["0%", "-100%"] }}
               transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
             >
               {[...images, ...images].map((item, index) => (
-                <div key={index} className="bg-white shadow-lg rounded-lg p-4 w-72 ">
+                <div key={index} className="bg-white shadow-lg rounded-lg p-4 w-72 transform transition-transform duration-300 hover:scale-105">
                   <img src={item.src} alt={`slide-${index}`} className="w-full h-48 object-cover rounded-lg" />
                   <h3 className="text-lg font-bold mt-2">{item.title}</h3>
                   <p className="text-gray-600 text-sm">{item.description}</p>
