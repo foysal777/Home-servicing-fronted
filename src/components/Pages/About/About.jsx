@@ -80,7 +80,7 @@ const About = () => {
       <section>
         <WhyChooseUs></WhyChooseUs>
       </section>
-       {/* Stats  */}
+      {/* Stats  */}
       <section>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center p-8">
           {stats.map((item, index) => (
@@ -93,9 +93,24 @@ const About = () => {
         </div>
       </section>
 
-     <section>
-      <Footer></Footer>
-     </section>
+      <section>
+      <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-gray-900 text-white rounded-2xl shadow-lg p-6 md:p-12 flex flex-col md:flex-row items-center max-w-5xl w-full">
+            <div class="md:w-2/3 text-center md:text-left">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Looking for the Best Service Finder & Bookings</h1>
+                <p class="text-gray-300 mb-6">We offer a comprehensive directory of top-rated service providers, detailed profiles, and customer reviews.</p>
+                <button class="bg-white text-gray-900 font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-gray-200 transition">Get Started →</button>
+            </div>
+            <div class="md:w-1/3 mt-6 md:mt-0 flex justify-center items-end">
+            <img src={"https://truelysell-wp.dreamstechnologies.com/wp-content/uploads/2024/10/repair-img-1.png"} alt="Service Worker" className="w-56 md:w-64 h-64 md:h-80 rounded-lg shadow-md transform hover:scale-110 transition duration-300" />
+            </div>
+        </div>
+    </div>
+      </section>
+
+      <section>
+        <Footer></Footer>
+      </section>
 
     </div>
   )
