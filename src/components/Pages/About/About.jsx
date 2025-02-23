@@ -1,7 +1,18 @@
 import React from 'react'
-import { Link ,Navigate, useNavigate} from "react-router-dom";
+import { FaUsers, FaHandshake, FaFileAlt, FaBriefcase } from "react-icons/fa";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import HowItWorks from './How';
+import WhyChooseUs from './Faq';
+import Footer from '../Footer/Footer';
 const About = () => {
+
+  const stats = [
+    { icon: <FaUsers size={40} className="text-pink-500" />, number: "2083+", label: "Satisfied Clients" },
+    { icon: <FaHandshake size={40} className="text-pink-500" />, number: "30+", label: "Expert Team" },
+    { icon: <FaFileAlt size={40} className="text-pink-500" />, number: "2000+", label: "Project Completed" },
+    { icon: <FaBriefcase size={40} className="text-pink-500" />, number: "9+", label: "Years of experience" }
+  ];
   const navigate = useNavigate();
   return (
     <div>
@@ -22,9 +33,9 @@ const About = () => {
 
               <div className="bg-purple-500 rounded-lg p-2">
                 <img
-                  src="https://truelysell-wp.dreamstechnologies.com/wp-content/uploads/2024/10/about-01.jpg" // এখানে আপনার ইমেজ লিংক বসান
+                  src="https://truelysell-wp.dreamstechnologies.com/wp-content/uploads/2024/10/about-01.jpg"
                   alt="Technician at Work"
-                  className="rounded-lg"
+                  className="rounded-lg transform transition-transform duration-300 hover:scale-80"
                 />
               </div>
             </div>
@@ -62,6 +73,30 @@ const About = () => {
           </div>
         </section>
       </div>
+      {/* How it works  */}
+      <section>
+        <HowItWorks></HowItWorks>
+      </section>
+      <section>
+        <WhyChooseUs></WhyChooseUs>
+      </section>
+       {/* Stats  */}
+      <section>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center p-8">
+          {stats.map((item, index) => (
+            <div key={index} className="flex flex-col items-center transform transition-transform duration-300 hover:scale-50">
+              {item.icon}
+              <h2 className="text-2xl font-bold text-gray-900 mt-2">{item.number}</h2>
+              <p className="text-gray-600">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+     <section>
+      <Footer></Footer>
+     </section>
+
     </div>
   )
 }
