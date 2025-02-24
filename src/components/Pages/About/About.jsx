@@ -13,6 +13,14 @@ const About = () => {
     { icon: <FaFileAlt size={40} className="text-pink-500" />, number: "2000+", label: "Project Completed" },
     { icon: <FaBriefcase size={40} className="text-pink-500" />, number: "9+", label: "Years of experience" }
   ];
+
+  const providers = [
+    { name: "Liren Waywe", role: "Electrician", image: "https://us.123rf.com/450wm/jackf/jackf2307/jackf230705307/207785992-positive-female-cleaning-service-worker-in-blue-jumpsuit-with-supplies.jpg?ver=6", verified: true },
+    { name: "Lucile Devera", role: "Cleaner", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomROcsNy1ggM7gVuFnGeLKA5HfwEUrw1pRQ&s", verified: true },
+    { name: "Maritza Wasson", role: "Carpenter", image: "https://truelysell-wp.dreamstechnologies.com/wp-content/uploads/2024/01/avatar-02-1.jpg", verified: true },
+    { name: "David Morrison", role: "Engineer", image: "https://truelysell-wp.dreamstechnologies.com/wp-content/uploads/2024/01/provider-04-1.jpg", verified: true },
+  ];
+
   const navigate = useNavigate();
   return (
     <div>
@@ -107,6 +115,31 @@ const About = () => {
         </div>
     </div>
       </section>
+
+   {/* Meet out expert  */}
+
+   <section>
+   <div className="max-w-6xl mx-auto px-4 py-10">
+      <h3 className="text-gray-500 text-lg">Meet Our Experts</h3>
+      <h1 className="text-3xl font-bold mb-6">Top Providers</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {providers.map((provider, index) => (
+          <div key={index} className="bg-white shadow-lg rounded-2xl overflow-hidden p-4 text-center transform transition duration-300 hover:scale-105">
+            <img
+              src={provider.image}
+              alt={provider.name}
+              className="w-32 h-32 mx-auto rounded-full object-cover"
+            />
+            <h2 className="mt-4 text-xl font-semibold flex justify-center items-center gap-2">
+              {provider.name}
+              {provider.verified && <span className="text-green-500">✔</span>}
+            </h2>
+            <p className="text-gray-500">{provider.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+   </section>
 
       <section>
         <Footer></Footer>
