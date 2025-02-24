@@ -8,6 +8,7 @@ import Services from './components/Pages/Services/Services'
 import { LogIn } from 'lucide-react'
 import LoginPage from './components/Pages/Auth/Login'
 import RegisterPage from './components/Pages/Auth/Register'
+import Contact from './components/Pages/Contact/Contact'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/services' element={<Services></Services>} ></Route>
           <Route path='/login' element={<LoginPage></LoginPage>} ></Route>
           <Route path='/register' element={<RegisterPage></RegisterPage> } ></Route>
+          <Route path='/contact' element={<Contact></Contact> } ></Route>
         </Routes>
       </BrowserRouter>
 
