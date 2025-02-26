@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import TruelysellWorkflow from './Work';
 import Footer from '../Footer/Footer';
+import Categories from './Categories';
 
 const Home = () => {
 
@@ -103,6 +104,11 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+          <section>
+
+            <Categories></Categories>
+          </section>
 
         {/* Our Feature services  */}
 

@@ -23,10 +23,10 @@ const Contact = () => {
 
             <section>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-12 ">
                     {contacts.map((contact, index) => (
-                        <div key={index} className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105">
-                            <div className="text-pink-500 text-4xl mb-3">{contact.icon}</div>
+                        <div key={index} className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 border border-pink-500">
+                            <div className="text-pink-500 text-4xl mb-3 ">{contact.icon}</div>
                             <h2 className="text-xl font-semibold">{contact.title}</h2>
                             {contact.details.map((detail, i) => (
                                 <p key={i} className="text-gray-500">{detail}</p>
@@ -40,7 +40,7 @@ const Contact = () => {
 
             <section className='p-14'>
 
-                <div className="pt-22  grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div className="pt-14 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                     <div className="overflow-hidden rounded-lg">
                         <img src="https://truelysell-wp.dreamstechnologies.com/wp-content/uploads/2024/01/contact-us.png" alt="Cleaning Service" className="w-full h-full object-cover transform transition duration-300 hover:scale-105" />
                     </div>
