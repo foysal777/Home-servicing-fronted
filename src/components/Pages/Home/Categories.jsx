@@ -1,19 +1,16 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-const categories = [
-  { name: "Appliance", listings: 3, icon: "🏠" },
-  { name: "Car Wash", listings: 2, icon: "🚗" },
-  { name: "Cleaning", listings: 1, icon: "🧹" },
-  { name: "Computer", listings: 2, icon: "💻" },
-  { name: "Construction", listings: 2, icon: "🏗️" },
-  { name: "Electrical", listings: 0, icon: "🔌" },
-  { name: "Interior", listings: 1, icon: "🛋️" },
-  { name: "Plumbing", listings: 1, icon: "🚰", new: true },
-  { name: "Carpentry", listings: 1, icon: "🔨" },
-];
 
 export default function Categories() {
   const navigate = useNavigate();
+  const [categories, setCategories] = useState([]); 
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/categories/api/categories/") 
+      .then((response) => response.json())
+      .then((data) => setCategories(data)) 
+      .catch((error) => console.error("Error fetching categories:", error));
+  }, []);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
@@ -24,12 +21,11 @@ export default function Categories() {
             className="bg-white shadow-lg rounded-xl p-6 text-center cursor-pointer transform transition duration-300 hover:scale-105"
             onClick={() => navigate(`/category/${category.name.toLowerCase()}`)}
           >
-            <div className="text-4xl mb-3">{category.icon}</div>
+            <div className="text-4xl mb-3">
+              <img src={category.icon} alt={category.name} className="w-12 h-12 mx-auto" />
+            </div>
             <h2 className="text-lg font-semibold">{category.name}</h2>
             <p className="text-gray-500">{category.listings} Listings</p>
-            {category.new && (
-              <span className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full ml-2">New</span>
-            )}
           </div>
         ))}
       </div>
