@@ -4,6 +4,7 @@ import { Star } from "lucide-react";
 import TruelysellWorkflow from './Work';
 import Footer from '../Footer/Footer';
 import Categories from './Categories';
+import Services from './Services';
 
 const Home = () => {
 
@@ -110,11 +111,16 @@ const Home = () => {
             <Categories></Categories>
           </section>
 
+          {/* Our dynamic services  */}
+          <div>
+         <Services></Services>
+          </div>
+
         {/* Our Feature services  */}
 
         <section>
 
-          <div className="overflow-hidden w-full bg-gray-100 py-10 ">
+          <div className="overflow-hidden w-full bg-white py-10 ">
 
             <div className="text-center mb-6">
               <h1 className="text-3xl font-bold">
