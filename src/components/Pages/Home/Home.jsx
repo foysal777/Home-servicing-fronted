@@ -5,6 +5,7 @@ import TruelysellWorkflow from './Work';
 import Footer from '../Footer/Footer';
 import Categories from './Categories';
 import Services from './Services';
+import PopularProviders from './PopularProvider';
 
 const Home = () => {
 
@@ -159,6 +160,11 @@ const Home = () => {
 
         <section>
           <TruelysellWorkflow></TruelysellWorkflow>
+        </section>
+
+        <section>
+       <PopularProviders></PopularProviders>
+          
         </section>
         <section>
           <Footer></Footer>
