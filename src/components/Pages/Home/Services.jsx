@@ -40,12 +40,13 @@ const Services = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h2 className="text-3xl font-bold text-center mb-4">
-        Our Recent <span className="text-blue-500">Services</span>
-      </h2>
-      <p className="text-gray-500 text-center mb-8">
-        Each listing is designed to be clear and concise, providing customers
-      </p>
+     <div className="text-center mb-6">
+              <h1 className="text-3xl font-bold">
+                Our Recent  <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text"> Services</span>
+              </h1>
+              <p className="text-gray-600 mt-2">Each listing is designed to be clear and concise, providing customers</p>
+            </div>
+     
       <Slider {...settings}>
         {services.map((service) => (
           <div key={service.id} className="bg-white shadow-lg rounded-lg overflow-hidden p-4">

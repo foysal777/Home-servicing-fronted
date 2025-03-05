@@ -107,7 +107,12 @@ const Home = () => {
         </section>
 
           <section>
-
+          <div className="text-center mb-6 pt-8">
+              <h1 className="text-3xl font-bold">
+                Explore our <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">Categories</span>
+              </h1>
+              <p className="text-gray-600 mt-2 ">Service categories help organize and structure the offerings on a marketplace, making it easier for users to find what they need.</p>
+            </div>
             <Categories></Categories>
           </section>
 
