@@ -18,7 +18,7 @@ export default function Categories() {
         {categories.map((category, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-xl p-6 text-center cursor-pointer transform transition duration-300 hover:scale-105"
+            className="bg-white shadow-lg rounded-xl p-6 text-center cursor-pointer transform transition duration-300 hover:scale-105 hover: border border-blue-500"
             onClick={() => navigate(`/category/${category.name.toLowerCase()}`)}
           >
             <div className="text-4xl mb-3">

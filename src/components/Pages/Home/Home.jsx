@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import Categories from './Categories';
 import Services from './Services';
 import PopularProviders from './PopularProvider';
+import Reviews from './Reviews';
 
 const Home = () => {
 
@@ -165,6 +166,9 @@ const Home = () => {
         <section>
        <PopularProviders></PopularProviders>
           
+        </section>
+        <section>
+          <Reviews></Reviews>
         </section>
         <section>
           <Footer></Footer>

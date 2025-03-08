@@ -49,14 +49,14 @@ const Services = () => {
      
       <Slider {...settings}>
         {services.map((service) => (
-          <div key={service.id} className="bg-white shadow-lg rounded-lg overflow-hidden p-4">
+          <div key={service.id} className="bg-white gap-4 shadow-lg rounded-lg overflow-hidden p-4 transform transition-transform duration-300 hover:scale-110">
             <img
               src={service.image}
               alt={service.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-48 object-cover  "
             />
             <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-800">{service.title}</h3>
+              <h3 className="text-lg text-purple-500 font-semibold ">{service.title}</h3>
               <div className="flex items-center text-yellow-500 mt-2">
                 <Star size={16} />
                 <span className="ml-1 text-gray-600">{service.rating} (3 Reviews)</span>

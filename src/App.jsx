@@ -11,6 +11,7 @@ import RegisterPage from './components/Pages/Auth/Register'
 import Contact from './components/Pages/Contact/Contact'
 import CategoryPage  from './components/Pages/Home/CategoryPage'
 import Categories from './components/Pages/Home/Categories'
+import VerifyEmail from './components/Pages/Auth/EmailVerfication'
 
 function App() {
 
@@ -25,10 +26,12 @@ function App() {
           <Route path='/about' element={<About></About>} ></Route>
           <Route path='/services' element={<Services></Services>} ></Route>
           <Route path='/login' element={<LoginPage></LoginPage>} ></Route>
-          <Route path='/register' element={<RegisterPage></RegisterPage> } ></Route>
           <Route path='/contact' element={<Contact></Contact> } ></Route>
           <Route path="/" element={<Categories />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
+          <Route path='/register' element={<RegisterPage></RegisterPage> } ></Route>
+          <Route path="/verify-email/:token" element={<VerifyEmail />} />
+       
         </Routes>
       </BrowserRouter>
 
