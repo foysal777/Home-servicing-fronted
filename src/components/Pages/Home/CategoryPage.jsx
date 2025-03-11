@@ -2,13 +2,15 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function CategoryPage() {
-  const { categoryName } = useParams();
+  const { categoryName } = useParams();  
+  // console.log(categoryName);  // Check category slug
   const [categoryDetails, setCategoryDetails] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://127.0.0.1:8000/categoriesPage/api/category/${categoryName}/`)
+   
+    fetch(`http://127.0.0.1:8000/categoriesPage/api/category/${categoryName}/`)  
       .then((response) => response.json())
       .then((data) => {
         setCategoryDetails(data);

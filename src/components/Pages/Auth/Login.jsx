@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginPage() {
   const navigate = useNavigate();
-  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -20,7 +20,7 @@ export default function LoginPage() {
       if (response.data.access) {
         localStorage.setItem('authToken', response.data.access);
         toast.success("Login successful! 🎉", { position: "top-center" });
-        setTimeout(() => navigate('/'), 2000); 
+        setTimeout(() => navigate('/'), 2000);
       } else {
         toast.error("Failed to receive a valid token.", { position: "top-center" });
       }
@@ -47,9 +47,9 @@ export default function LoginPage() {
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label className="block text-gray-700 mb-1">Email</label>
-            <input 
-              type="email" 
-              placeholder="example@example.com" 
+            <input
+              type="email"
+              placeholder="example@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-2 border border-pink-500 rounded-md bg-gray-100 text-pink-500"
@@ -59,9 +59,9 @@ export default function LoginPage() {
           <div className="mb-4">
             <label className="block text-zinc-900 mb-1">Password</label>
             <div className="relative">
-              <input 
-                type="password" 
-                placeholder="************" 
+              <input
+                type="password"
+                placeholder="************"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 border border-pink-500 rounded-md bg-gray-100 text-gray-600"
