@@ -12,6 +12,7 @@ import Contact from './components/Pages/Contact/Contact'
 import CategoryPage  from './components/Pages/Home/CategoryPage'
 import Categories from './components/Pages/Home/Categories'
 import VerifyEmail from './components/Pages/Auth/EmailVerfication'
+import EditProfile from './components/Pages/Home/Myprofile'
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/category/:categoryName" element={<CategoryPage />} />
           <Route path='/register' element={<RegisterPage></RegisterPage> } ></Route>
           <Route path="/verify-email/:token" element={<VerifyEmail />} />
+          <Route path='/my-profile' element={ <EditProfile></EditProfile> } ></Route>
        
         </Routes>
       </BrowserRouter>

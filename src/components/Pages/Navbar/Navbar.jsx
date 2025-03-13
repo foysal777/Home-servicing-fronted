@@ -6,8 +6,8 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [authToken, setAuthToken] = useState(null);
+  const [profileOpen, setProfileOpen] = useState(false); // New state for profile dropdown
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
@@ -18,6 +18,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     setAuthToken(null);
+    setProfileOpen(false); // Close dropdown on logout
     navigate("/login");
   };
 
@@ -36,14 +37,7 @@ const Navbar = () => {
 
         {/* Menu Items */}
         <ul className={`font-bold md:flex md:items-center md:gap-6 absolute md:static top-16 left-0 w-full bg-white md:w-auto shadow-md md:shadow-none md:flex-row flex-col transition-all duration-300 ${menuOpen ? "block" : "hidden"}`}>
-
-          {/* Everyone to see Home Page */}
-          {authToken && (
-            <li><NavLink to="/" className={({ isActive }) => isActive ? "text-blue-600 p-2 block" : "hover:text-pink-600 p-2 block"}>Home</NavLink></li>
-
-          )}
-
-          {/* User Logged-in see Navbar  */}
+          {authToken && <li><NavLink to="/" className={({ isActive }) => isActive ? "text-blue-600 p-2 block" : "hover:text-pink-600 p-2 block"}>Home</NavLink></li>}
           {authToken && (
             <>
               <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-blue-600 p-2 block" : "hover:text-pink-600 p-2 block"}>About Us</NavLink></li>
@@ -74,16 +68,18 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-4">
           {authToken ? (
             // Logged-in User Profile & Logout
-            <div className="relative group">
-              <button className="flex items-center bg-gradient-to-r from-blue-500 to-pink-500 px-4 py-2 rounded-md text-white hover:from-sky-500 hover:to-green-500 transition-all duration-300">
+            <div className="relative">
+              <button onClick={() => setProfileOpen(!profileOpen)} className="flex items-center bg-gradient-to-r from-blue-500 to-pink-500 px-4 py-2 rounded-md text-white hover:from-sky-500 hover:to-green-500 transition-all duration-300">
                 <User size={16} className="mr-2" /> Profile
               </button>
 
-              <div className="absolute right-0 mt-2 w-40 bg-white shadow-md rounded-md hidden group-hover:block">
-                <NavLink to="/profile" className="block px-4 py-2 hover:bg-gray-100">My Profile</NavLink>
-                <NavLink to="/change-password" className="block px-4 py-2 hover:bg-gray-100">Change Password</NavLink>
-                <button onClick={handleLogout} className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100">Logout</button>
-              </div>
+              {profileOpen && (
+                <div className="absolute right-0 mt-2 w-40 bg-white shadow-md rounded-md">
+                  <NavLink to="/my-profile" className="block px-4 py-2 hover:bg-gray-100">My Profile</NavLink>
+                  <NavLink to="/change-password" className="block px-4 py-2 hover:bg-gray-100">Change Password</NavLink>
+                  <button onClick={handleLogout} className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100">Logout</button>
+                </div>
+              )}
             </div>
           ) : (
             // Guest (Show Sign In & Register Button)

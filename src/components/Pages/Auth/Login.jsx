@@ -19,6 +19,7 @@ export default function LoginPage() {
 
       if (response.data.access) {
         localStorage.setItem('authToken', response.data.access);
+       
         toast.success("Login successful! 🎉", { position: "top-center" });
         setTimeout(() => navigate('/'), 2000);
       } else {
