@@ -12,15 +12,23 @@ const EditProfile = () => {
 
   const authToken = localStorage.getItem("authToken");
 
+  // Fetch user data from the API
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get("http://127.0.0.1:8000/user/profile/", {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            Authorization: `Bearer  ${authToken}`,
           },
         });
-        setUserData(response.data);
+        // Update the state with fetched user data
+        setUserData({
+          username: response.data.username,
+          email: response.data.email,
+          first_name: response.data.first_name || "",
+          last_name: response.data.last_name || "",
+          phone: response.data.phone || "", 
+        });
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -30,24 +38,30 @@ const EditProfile = () => {
       fetchUserData();
     }
   }, [authToken]);
+  console.log(authToken);
 
+  // Handle input change
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
+  // Handle form submission (update profile)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.put("http://127.0.0.1:8000/user/profile/", userData, {
         headers: {
-          Authorization: `Bearer ${authToken}`,
+          Authorization: `Token ${authToken}`,
         },
       });
-      console.log(userData);
+      console.log("Updated user data:", userData);
       alert("Profile updated successfully!");
     } catch (error) {
       console.error("Error updating profile:", error);
     }
+
+
+    
   };
 
   return (
@@ -62,10 +76,10 @@ const EditProfile = () => {
               className="w-24 h-24 rounded-full border-4 border-white mb-4"
             />
             <p className="text-lg font-semibold">Username: {userData.username}</p>
-            <p className="text-sm">First Name: {userData.first_name}</p>
+            <p className="text-sm  ">First Name: {userData.first_name}</p>
             <p className="text-sm">Last Name: {userData.last_name}</p>
             <p className="text-sm">Email: {userData.email}</p>
-            <p className="text-sm">Phone: {userData.phone || "N/A"}</p>
+            <p className="text-sm">Phone: {userData.phone || "+88014798562"}</p>
             <button className="mt-4 px-4 py-2 bg-white text-pink-500 font-semibold rounded-md shadow hover:bg-gray-200">
               Change Password
             </button>
@@ -125,7 +139,10 @@ const EditProfile = () => {
                   className="w-full p-2 border-2 border-red-500 rounded-md"
                 />
               </div>
-              <button type="submit" className="w-full bg-green-600 text-white p-2 rounded-md hover:bg-green-700">
+              <button
+                type="submit"
+                className="w-full bg-pink-600 text-white p-2 rounded-md hover:bg-pink-700"
+              >
                 Save Changes
               </button>
             </form>

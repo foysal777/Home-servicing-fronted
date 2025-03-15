@@ -13,6 +13,7 @@ import CategoryPage  from './components/Pages/Home/CategoryPage'
 import Categories from './components/Pages/Home/Categories'
 import VerifyEmail from './components/Pages/Auth/EmailVerfication'
 import EditProfile from './components/Pages/Home/Myprofile'
+import AdminDashboard from './components/Pages/Admin/AdminDashboard'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path='/register' element={<RegisterPage></RegisterPage> } ></Route>
           <Route path="/verify-email/:token" element={<VerifyEmail />} />
           <Route path='/my-profile' element={ <EditProfile></EditProfile> } ></Route>
+          <Route path='/admin-dashbord' element={ <AdminDashboard></AdminDashboard> } ></Route>
        
         </Routes>
       </BrowserRouter>

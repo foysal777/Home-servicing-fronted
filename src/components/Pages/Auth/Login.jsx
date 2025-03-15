@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { data, Link, useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
@@ -19,10 +19,24 @@ export default function LoginPage() {
 
       if (response.data.access) {
         localStorage.setItem('authToken', response.data.access);
-       
-        toast.success("Login successful! 🎉", { position: "top-center" });
-        setTimeout(() => navigate('/'), 2000);
-      } else {
+       console.log(data.access);
+       const isSuperUser = response.data.is_superuser;  
+       const isStaff = response.data.is_staff;
+ 
+        toast.success("Login successful! & Please Refresh web Page 🎉", { position: "top-center" });
+        setTimeout(() => {
+          if (isSuperUser || isStaff) {
+            navigate('/admin-dashbord'); // Redirect to admin page
+          } else {
+            navigate('/'); // Redirect regular users to home
+          }
+        }, 2000);
+      } 
+      
+      
+      
+      
+      else {
         toast.error("Failed to receive a valid token.", { position: "top-center" });
       }
     } catch (err) {

@@ -4,18 +4,15 @@ import { useNavigate } from "react-router-dom";
 export default function Categories() {
 
 
-  fetch('http://127.0.0.1:8000/user/profile', {
+  fetch('http://127.0.0.1:8000/user/profile/', {
     method: 'GET',
     headers: {
-        'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MTk2MTg3OSwiaWF0IjoxNzQxODc1NDc5LCJqdGkiOiIzNDIwY2YzMTM1YTg0MWIzYTYzYmNjNTU2MGY4OTU0NSIsInVzZXJfaWQiOjh9.V_q67_EZhkh6e1VgO7V_Qh8pHhLl8jh60KjnfBs-13k',
+      'Authorization': 'Token 92a2cc4cd5170380b47c723009b49509ecfec56b'
     }
-})
-.then(response => response.json())
-.then(data => {
-    console.log(data);  // ইউজারের ডিটেইলস এখানে পাবেন
-})
-.catch(error => console.error('Error:', error));
-
+  })
+    .then(response => response.json())
+    .then(data => console.log(data));
+  
 
 
 

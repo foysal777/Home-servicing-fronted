@@ -8,6 +8,7 @@ import Services from './Services';
 import PopularProviders from './PopularProvider';
 import Reviews from './Reviews';
 
+
 const Home = () => {
 
 
@@ -46,6 +47,8 @@ const Home = () => {
     <div>
 
       <section className='pt-16'>
+
+      
 
         {/* Hero section  */}
         <section>
