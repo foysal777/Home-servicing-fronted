@@ -45,7 +45,7 @@ const AdminDashboard = () => {
             <p className="text-gray-500">Users</p>
           </div>
           <div className="bg-white p-6 shadow-md rounded-md">
-            <h3 className="text-2xl font-bold">10 <span className="text-green-500">+30%</span></h3>
+            <h3 className="text-2xl font-bold">10 <span className="text-green-500">+40%</span></h3>
             <p className="text-gray-500">Companies</p>
           </div>
           <div className="bg-white p-6 shadow-md rounded-md">
