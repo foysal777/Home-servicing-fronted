@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
+
 const Services = () => {
   const [services, setServices] = useState([]);
 
@@ -66,6 +68,8 @@ const Services = () => {
           </div>
         ))}
       </Slider>
+
+     
     </div>
   );
 };

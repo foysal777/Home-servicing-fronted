@@ -16,14 +16,14 @@ const AdminDashboard = () => {
           <button onClick={() => navigate("/")} className="flex items-center space-x-2 w-full text-left">
             <FaHome /> <span>Home</span>
           </button>
-          <button onClick={() => navigate("/profile")} className="flex items-center space-x-2 w-full text-left">
+          <button onClick={() => navigate("/my-profile")} className="flex items-center space-x-2 w-full text-left">
             <FaUser /> <span>My Profile</span>
           </button>
-          <button onClick={() => navigate("/blog")} className="flex items-center space-x-2 w-full text-left">
-            <FaBlog /> <span>Blog</span>
+          <button onClick={() => navigate("/admin-categories")} className="flex items-center space-x-2 w-full text-left">
+            <FaBlog /> <span>Categoreis</span>
           </button>
           <button onClick={() => navigate("/appointments")} className="flex items-center space-x-2 w-full text-left">
-            <FaCalendarAlt /> <span>Appointments</span>
+            <FaCalendarAlt /> <span>services</span>
           </button>
           <a href="#" className="flex items-center space-x-2"><FaBell /> Notifications <span className="bg-red-500 px-2 rounded-full">5</span></a>
           <a href="#" className="flex items-center space-x-2"><FaEnvelope /> Messages <span className="bg-green-500 px-2 rounded-full">2 New</span></a>

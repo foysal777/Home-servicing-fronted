@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaHome } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { Grid, List, ChevronDown, Search, Heart } from "lucide-react";
+import Footer from "../Footer/Footer";
 
 const GridWithSidebar = () => {
   const navigate = useNavigate();
@@ -160,6 +161,10 @@ const GridWithSidebar = () => {
             )}
           </div>
         </div>
+      </div>
+
+      <div className="pt-18">
+        <Footer></Footer>
       </div>
     </div>
   );

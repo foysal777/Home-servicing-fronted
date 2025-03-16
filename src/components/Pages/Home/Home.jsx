@@ -7,6 +7,7 @@ import Categories from './Categories';
 import Services from './Services';
 import PopularProviders from './PopularProvider';
 import Reviews from './Reviews';
+import HeroSection from './HeroBlk';
 
 
 const Home = () => {
@@ -173,7 +174,11 @@ const Home = () => {
         <section>
           <Reviews></Reviews>
         </section>
-        <section>
+
+        <section className='pt-18'>
+          <HeroSection></HeroSection>
+        </section>
+        <section className='pt-24'>
           <Footer></Footer>
         </section>
 
