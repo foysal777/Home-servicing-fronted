@@ -22,7 +22,7 @@ const AdminDashboard = () => {
           <button onClick={() => navigate("/admin-categories")} className="flex items-center space-x-2 w-full text-left">
             <FaBlog /> <span>Categoreis</span>
           </button>
-          <button onClick={() => navigate("/appointments")} className="flex items-center space-x-2 w-full text-left">
+          <button onClick={() => navigate("/admin-service")} className="flex items-center space-x-2 w-full text-left">
             <FaCalendarAlt /> <span>services</span>
           </button>
           <a href="#" className="flex items-center space-x-2"><FaBell /> Notifications <span className="bg-red-500 px-2 rounded-full">5</span></a>

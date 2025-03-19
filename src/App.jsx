@@ -14,7 +14,8 @@ import Categories from './components/Pages/Home/Categories'
 import VerifyEmail from './components/Pages/Auth/EmailVerfication'
 import EditProfile from './components/Pages/Home/Myprofile'
 import AdminDashboard from './components/Pages/Admin/AdminDashboard'
-
+import CategoryAdmin from './components/Pages/Admin/AdminCategories'
+import AdminService from './components/Pages/Admin/AdminService'
 function App() {
 
 
@@ -36,6 +37,8 @@ function App() {
           <Route path="/verify-email/:token" element={<VerifyEmail />} />
           <Route path='/my-profile' element={ <EditProfile></EditProfile> } ></Route>
           <Route path='/admin-dashbord' element={ <AdminDashboard></AdminDashboard> } ></Route>
+          <Route path='/admin-categories' element={ <CategoryAdmin></CategoryAdmin>} ></Route>
+          <Route path='/admin-service' element={ <AdminService></AdminService>} ></Route>
        
         </Routes>
       </BrowserRouter>
