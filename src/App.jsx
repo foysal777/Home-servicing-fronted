@@ -16,6 +16,7 @@ import EditProfile from './components/Pages/Home/Myprofile'
 import AdminDashboard from './components/Pages/Admin/AdminDashboard'
 import CategoryAdmin from './components/Pages/Admin/AdminCategories'
 import AdminService from './components/Pages/Admin/AdminService'
+import BlogPage from './components/Pages/Blog/Blog'
 function App() {
 
 
@@ -39,6 +40,7 @@ function App() {
           <Route path='/admin-dashbord' element={ <AdminDashboard></AdminDashboard> } ></Route>
           <Route path='/admin-categories' element={ <CategoryAdmin></CategoryAdmin>} ></Route>
           <Route path='/admin-service' element={ <AdminService></AdminService>} ></Route>
+          <Route path='/blog' element={ <BlogPage></BlogPage>} ></Route>
        
         </Routes>
       </BrowserRouter>

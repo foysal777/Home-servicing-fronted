@@ -14,3 +14,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Static Sidebar */
+.fixed-sidebar {
+  position: fixed;
+  top: 11rem; /* Header এর নিচে gap */
+  right: 0;
+
+  width: 26%; /* Sidebar এর width */
+  height: calc(100vh - 6rem); /* পুরো ভিউপোর্ট, Header বাদে */
+  overflow-y: auto; /* Scrollbar যোগ হবে যদি কনটেন্ট বেশি হয় */
+  background-color: #ffffff; /* সাইডবারের ব্যাকগ্রাউন্ড */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}

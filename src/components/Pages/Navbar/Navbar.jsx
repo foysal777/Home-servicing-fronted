@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo */}
         <NavLink to="/" className="text-xl font-bold text-pink-600 flex items-center">
-          <span>Quick Response</span>
+          <span>QRC</span>
         </NavLink>
 
         {/* Mobile Menu Button */}
@@ -59,6 +59,7 @@ const Navbar = () => {
                 </ul>
               </li>
 
+              <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-blue-600 p-2 block" : "hover:text-pink-600 p-2 block"}>Blog</NavLink></li>
               <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-blue-600 p-2 block" : "hover:text-pink-600 p-2 block"}>Contact</NavLink></li>
             </>
           )}
