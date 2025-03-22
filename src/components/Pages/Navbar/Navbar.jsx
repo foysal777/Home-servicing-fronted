@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown, User, Lock } from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [categoriesOpen, setCategoriesOpen] = useState(false);
+  const [categoriesOpen, setCategoriesOpen] = useState(false);  // Categories dropdown toggle state
   const [authToken, setAuthToken] = useState(null);
   const [profileOpen, setProfileOpen] = useState(false); // New state for profile dropdown
   const navigate = useNavigate();
@@ -20,6 +20,11 @@ const Navbar = () => {
     setAuthToken(null);
     setProfileOpen(false); // Close dropdown on logout
     navigate("/login");
+  };
+
+  // Function to handle category click and close dropdown
+  const handleCategoryClick = () => {
+    setCategoriesOpen(false); // Close the categories dropdown after clicking a category
   };
 
   return (
@@ -49,9 +54,9 @@ const Navbar = () => {
                   Categories <ChevronDown size={16} />
                 </button>
                 <ul className={`${categoriesOpen ? "block" : "hidden"} absolute bg-white shadow-md rounded-md mt-2 py-2 w-40`}>
-                  {['Appliance', 'Car Wash', 'Plumbing', 'Computer', 'Construction'].map((cat) => (
+                  {['Appliance', 'Cleaning', 'Car Wash', 'Plumbing', 'Computer', 'Construction'].map((cat) => (
                     <li key={cat} className="p-2 hover:bg-gray-100">
-                      <NavLink to={`/category/${cat.toLowerCase()}`} className={({ isActive }) => isActive ? "text-blue-600" : "hover:text-pink-600"}>
+                      <NavLink to={`/category/${cat.toLowerCase()}`} className={({ isActive }) => isActive ? "text-blue-600" : "hover:text-pink-600"} onClick={handleCategoryClick}>
                         {cat}
                       </NavLink>
                     </li>
