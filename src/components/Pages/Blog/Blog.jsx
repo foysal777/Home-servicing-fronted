@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-
+import CommentSection from "./Comment";
+import { useParams } from "react-router-dom";
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
+  const { postId } = useParams();
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/blog/posts/")
@@ -12,7 +14,7 @@ const BlogPage = () => {
 
   return (
     <div className="pt-18">
-      <div className="bg-gray-100 min-h-screen p-6">
+      <div className="bg-white min-h-screen p-6">
         {/* Header */}
         <header className="text-center py-4">
           <h1 className="text-3xl font-bold">Blog</h1>
@@ -27,7 +29,7 @@ const BlogPage = () => {
             {posts.map((post) => (
               <div
                 key={post.id}
-                className="bg-white p-6 rounded-lg shadow-md mb-6"
+                className="bg-white p-6 mb-6"
               >
                 <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
                 <p className="text-gray-500 text-sm">
@@ -44,6 +46,9 @@ const BlogPage = () => {
                 <p className="text-gray-500 text-xs">
                   Created At: {new Date(post.created_at).toLocaleDateString()}
                 </p>
+                <br /><br />
+                <p>The user Revies are below</p>
+                <CommentSection  postId={post.id} ></CommentSection>
               </div>
             ))}
           </div>
@@ -98,6 +103,10 @@ const BlogPage = () => {
           </aside>
         </div>
       </div>
+      {/* comment section  */}
+      <section>
+
+      </section>
     </div>
   );
 };
