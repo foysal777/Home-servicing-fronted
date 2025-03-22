@@ -40,7 +40,10 @@ function App() {
           <Route path='/admin-dashbord' element={ <AdminDashboard></AdminDashboard> } ></Route>
           <Route path='/admin-categories' element={ <CategoryAdmin></CategoryAdmin>} ></Route>
           <Route path='/admin-service' element={ <AdminService></AdminService>} ></Route>
+     
+          <Route path='/blog/posts/:id/comments' element={ <BlogPage></BlogPage>} ></Route>
           <Route path='/blog' element={ <BlogPage></BlogPage>} ></Route>
+         
        
         </Routes>
       </BrowserRouter>
