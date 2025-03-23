@@ -31,8 +31,8 @@ const Navbar = () => {
     <nav className="bg-white shadow-md w-full fixed top-0 z-50">
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo */}
-        <NavLink to="/" className="text-xl font-bold text-pink-600 flex items-center">
-          <span>QRC</span>
+        <NavLink to="/" className="flex items-center">
+          <img src="https://cdn-icons-png.freepik.com/256/11923/11923001.png?uid=R86563100&ga=GA1.1.1673100480.1739595697" alt="Logo" className="h-12 w-auto" /> {/* Logo Image */}
         </NavLink>
 
         {/* Mobile Menu Button */}
