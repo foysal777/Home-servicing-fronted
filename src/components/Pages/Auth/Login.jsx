@@ -18,19 +18,23 @@ export default function LoginPage() {
       const response = await axios.post('http://127.0.0.1:8000/authentications/login/', { email, password });
 
       if (response.data.access) {
-        localStorage.setItem('authToken', response.data.access);
+       localStorage.setItem('authToken', response.data.access);
+       localStorage.setItem('is_superuser', response.data.is_superuser);
        console.log(data.access);
        const isSuperUser = response.data.is_superuser;  
        const isStaff = response.data.is_staff;
+      //  localStorage.setItem(isSuperUser);
+       
  
         toast.success("Login successful! & Please Refresh web Page 🎉", { position: "top-center" });
         setTimeout(() => {
           if (isSuperUser || isStaff) {
             navigate('/admin-dashbord'); // Redirect to admin page
           } else {
-            navigate('/'); // Redirect regular users to home
+            navigate('/'); 
+            alert("Please Refresh the webpage ")
           }
-        }, 2000);
+        }, 5000);
       } 
       
       

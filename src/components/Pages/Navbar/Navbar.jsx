@@ -4,27 +4,28 @@ import { Menu, X, ChevronDown, User, Lock } from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [categoriesOpen, setCategoriesOpen] = useState(false);  // Categories dropdown toggle state
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [authToken, setAuthToken] = useState(null);
-  const [profileOpen, setProfileOpen] = useState(false); // New state for profile dropdown
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [userRole, setUserRole] = useState(false); // Default false
   const navigate = useNavigate();
 
   useEffect(() => {
+
     const token = localStorage.getItem("authToken");
+    const role = localStorage.getItem("is_superuser") === "true"; // Convert to boolean
     setAuthToken(token);
+    setUserRole(role);
   }, []);
 
   // Logout Function
   const handleLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("is_superuser");
     setAuthToken(null);
-    setProfileOpen(false); // Close dropdown on logout
+    setUserRole(false);
+    setProfileOpen(false);
     navigate("/login");
-  };
-
-  // Function to handle category click and close dropdown
-  const handleCategoryClick = () => {
-    setCategoriesOpen(false); // Close the categories dropdown after clicking a category
   };
 
   return (
@@ -32,7 +33,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo */}
         <NavLink to="/" className="flex items-center">
-          <img src="https://cdn-icons-png.freepik.com/256/11923/11923001.png?uid=R86563100&ga=GA1.1.1673100480.1739595697" alt="Logo" className="h-12 w-auto" /> {/* Logo Image */}
+          <img src="https://cdn-icons-png.freepik.com/256/11923/11923001.png?uid=R86563100&ga=GA1.1.1673100480.1739595697" alt="Logo" className="h-12 w-auto" />
         </NavLink>
 
         {/* Mobile Menu Button */}
@@ -56,7 +57,7 @@ const Navbar = () => {
                 <ul className={`${categoriesOpen ? "block" : "hidden"} absolute bg-white shadow-md rounded-md mt-2 py-2 w-40`}>
                   {['Appliance', 'Cleaning', 'Car Wash', 'Plumbing', 'Computer', 'Construction'].map((cat) => (
                     <li key={cat} className="p-2 hover:bg-gray-100">
-                      <NavLink to={`/category/${cat.toLowerCase()}`} className={({ isActive }) => isActive ? "text-blue-600" : "hover:text-pink-600"} onClick={handleCategoryClick}>
+                      <NavLink to={`/category/${cat.toLowerCase()}`} className={({ isActive }) => isActive ? "text-blue-600" : "hover:text-pink-600"} onClick={() => setCategoriesOpen(false)}>
                         {cat}
                       </NavLink>
                     </li>
@@ -81,6 +82,12 @@ const Navbar = () => {
 
               {profileOpen && (
                 <div className="absolute right-0 mt-2 w-40 bg-white shadow-md rounded-md">
+                  {userRole && (
+                    <NavLink to="/admin-dashbord" className="block px-4 py-2 hover:bg-gray-100">Admin Dashboard</NavLink>
+                
+                  )}
+               
+
                   <NavLink to="/my-profile" className="block px-4 py-2 hover:bg-gray-100">My Profile</NavLink>
                   <NavLink to="/change-password" className="block px-4 py-2 hover:bg-gray-100">Change Password</NavLink>
                   <button onClick={handleLogout} className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100">Logout</button>
