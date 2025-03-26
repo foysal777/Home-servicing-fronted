@@ -7,13 +7,13 @@ const Navbar = () => {
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [authToken, setAuthToken] = useState(null);
   const [profileOpen, setProfileOpen] = useState(false);
-  const [userRole, setUserRole] = useState(false); // Default false
+  const [userRole, setUserRole] = useState(false); 
   const navigate = useNavigate();
 
   useEffect(() => {
 
     const token = localStorage.getItem("authToken");
-    const role = localStorage.getItem("is_superuser") === "true"; // Convert to boolean
+    const role = localStorage.getItem("is_superuser") === "true"; 
     setAuthToken(token);
     setUserRole(role);
   }, []);
