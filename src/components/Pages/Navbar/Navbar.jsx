@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown, User, Lock } from "lucide-react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,6 +28,7 @@ const Navbar = () => {
     setAuthToken(null);
     setUserRole(false);
     setProfileOpen(false);
+    toast.success("Logout successful!  🎉", { position: "top-center" });
     navigate("/login");
   };
 
@@ -101,12 +105,15 @@ const Navbar = () => {
                 <Lock size={16} className="mr-2" /> Sign In
               </button>
               <button onClick={() => navigate("/register")} className="flex items-center bg-gradient-to-r from-pink-500 to-blue-500 px-4 py-2 rounded-md text-white hover:opacity-80">
-                <User size={16} className="mr-2" /> Join U
+                <User size={16} className="mr-2" /> Join Us
               </button>
             </>
           )}
+            <ToastContainer autoClose={2000}></ToastContainer>
         </div>
+      
       </div>
+
     </nav>
   );
 };

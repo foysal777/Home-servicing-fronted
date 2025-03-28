@@ -3,20 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Categories() {
 
-
-  fetch('http://127.0.0.1:8000/user/profile/', {
-    method: 'GET',
-    headers: {
-      'Authorization': 'Token 92a2cc4cd5170380b47c723009b49509ecfec56b'
-    }
-  })
-    .then(response => response.json())
-    .then(data => console.log(data));
-  
-
-
-
-
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]); 
 

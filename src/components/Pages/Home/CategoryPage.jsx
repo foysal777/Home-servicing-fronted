@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function CategoryPage() {
   const { categoryName } = useParams();  
-  // console.log(categoryName);  // Check category slug
+  // console.log(categoryName);  
   const [categoryDetails, setCategoryDetails] = useState(null);
   const [loading, setLoading] = useState(true);
 

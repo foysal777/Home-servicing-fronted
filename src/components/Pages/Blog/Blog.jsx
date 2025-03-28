@@ -85,7 +85,7 @@ const BlogPage = () => {
               <h3 className="font-bold text-lg mb-2 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 text-transparent bg-clip-text">
                 Blog Categories
               </h3>
-              <ul className="text-gray-700 text-sm space-y-1">
+              <ul className="text-pink-700 font-bold text-sm space-y-1">
                 <li>Car Wash</li>
                 <li>Electrical</li>
                 <li>Interior</li>

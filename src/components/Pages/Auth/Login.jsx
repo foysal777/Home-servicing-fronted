@@ -20,16 +20,16 @@ export default function LoginPage() {
       if (response.data.access) {
        localStorage.setItem('authToken', response.data.access);
        localStorage.setItem('is_superuser', response.data.is_superuser);
-       console.log(data.access);
+       console.log(response.data);
        const isSuperUser = response.data.is_superuser;  
        const isStaff = response.data.is_staff;
-      //  localStorage.setItem(isSuperUser);
+  
        
  
         toast.success("Login successful! & Please Refresh web Page 🎉", { position: "top-center" });
         setTimeout(() => {
           if (isSuperUser || isStaff) {
-            navigate('/admin-dashbord'); // Redirect to admin page
+            navigate('/admin-dashbord'); 
           } else {
             navigate('/'); 
             alert("Please Refresh the webpage ")
