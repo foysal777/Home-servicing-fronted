@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 import axios from "axios";
+import { FaHome } from "react-icons/fa";
+import { data, Link, useNavigate } from "react-router-dom";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
@@ -9,6 +11,7 @@ const BlogPage = () => {
   const [newComment, setNewComment] = useState({ name: "", email: "", content: "" });
   const [loading, setLoading] = useState(false);
   const [posting, setPosting] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/blog/posts/")
@@ -62,10 +65,13 @@ const BlogPage = () => {
   return (
     <div className="pt-18">
       <div className="bg-white min-h-screen p-6">
-        <header className="text-center py-4">
-          <h1 className="text-3xl font-bold text-pink-500">Blog</h1>
-          <p className="text-gray-600 text-sm">It is a long established fact that a reader will be</p>
-        </header>
+        <div className="text-center mb-6 pt-10">
+          <h2 className="text-4xl font-bold text-purple-500">Blog</h2>
+          <div className="flex justify-center items-center text-pink-600 mt-1">
+            <FaHome onClick={() => { navigate('/') }} className="mr-2" />
+            <span className="text-gray-500"> &gt; It is a long established fact that a reader will be</span>
+          </div>
+        </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-2">
           <div className="md:col-span-3 ">
@@ -140,6 +146,7 @@ const BlogPage = () => {
           ))}
         </div>
       </div>
+      
     </div>
   );
 };

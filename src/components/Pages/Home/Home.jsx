@@ -48,12 +48,8 @@ const Home = () => {
     <div>
 
       <section className='pt-16'>
-
-      
-
         {/* Hero section  */}
         <section>
-
           <div className="min-h-screen bg-gradient-to-br from-purple-100 to-white p-6 flex flex-col md:flex-row items-center">
             {/* Left Side Text Section */}
             <div className="w-full md:w-1/2 text-center flex flex-col justify-center">
@@ -112,27 +108,26 @@ const Home = () => {
           </div>
         </section>
 
-          <section>
+        <section>
           <div className="text-center mb-6 pt-8">
-              <h1 className="text-3xl font-bold">
-                Explore our <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">Categories</span>
-              </h1>
-              <p className="text-gray-600 mt-2 ">Service categories help organize and structure the offerings on a marketplace, making it easier for users to find what they need.</p>
-            </div>
-            <Categories></Categories>
-          </section>
-
-          {/* Our dynamic services  */}
-          <div>
-         <Services></Services>
+            <h1 className="text-3xl font-bold">
+              Explore our <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">Categories</span>
+            </h1>
+            <p className="text-gray-600 mt-2 ">Service categories help organize and structure the offerings on a marketplace, making it easier for users to find what they need.</p>
           </div>
+          <Categories></Categories>
+        </section>
+
+        {/* Our dynamic services  */}
+        <div>
+          <Services></Services>
+        </div>
 
         {/* Our Feature services  */}
 
         <section>
 
           <div className="overflow-hidden w-full bg-white py-10 ">
-
             <div className="text-center mb-6">
               <h1 className="text-3xl font-bold">
                 Our Featured <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">Services</span>
@@ -168,8 +163,8 @@ const Home = () => {
         </section>
 
         <section>
-       <PopularProviders></PopularProviders>
-          
+          <PopularProviders></PopularProviders>
+
         </section>
         <section>
           <Reviews></Reviews>

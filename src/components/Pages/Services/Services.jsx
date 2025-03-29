@@ -12,7 +12,7 @@ const GridWithSidebar = () => {
   const [loading, setLoading] = useState(false);
   const [keyword, setKeyword] = useState("");
   const [location, setLocation] = useState("");
-  const [category, setCategory] = useState(""); // Category input
+  const [category, setCategory] = useState(""); 
   const [sortOption, setSortOption] = useState("");
 
   useEffect(() => {

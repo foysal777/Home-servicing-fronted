@@ -51,7 +51,7 @@ const EditProfile = () => {
     try {
       await axios.put("http://127.0.0.1:8000/user/profile/", userData, {
         headers: {
-          Authorization: `Token ${authToken}`,
+          Authorization: `Bearer ${authToken}`,
         },
       });
       console.log("Updated user data:", userData);
