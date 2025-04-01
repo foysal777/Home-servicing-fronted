@@ -46,7 +46,7 @@ const AdminDashboard = () => {
           </div>
           <div className="bg-white p-6 shadow-md rounded-md">
             <h3 className="text-2xl font-bold">10 <span className="text-green-500">+40%</span></h3>
-            <p className="text-gray-500">Companies</p>
+            <p className="text-gray-500">cutomers</p>
           </div>
           <div className="bg-white p-6 shadow-md rounded-md">
             <h3 className="text-2xl font-bold">4</h3>
@@ -84,7 +84,7 @@ const AdminDashboard = () => {
         {/* User Growth Chart Placeholder */}
         <div className="bg-white p-6 shadow-md rounded-md mt-6">
           <h3 className="text-lg font-semibold">User Growth</h3>
-          <p className="text-gray-500">Graph will be here (Use Recharts for implementation)</p>
+          <p className="text-gray-500">Graph will be here </p>
         </div>
       </div>
     </div>

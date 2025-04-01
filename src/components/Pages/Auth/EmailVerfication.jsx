@@ -10,7 +10,7 @@ export default function VerifyEmail() {
     axios
       .get(`http://127.0.0.1:8000/authentications/verify-email/${token}/`)
       .then((res) => setMessage(res.data.message))
-      .catch((err) => setMessage("Verification failed."));
+      .catch((err) => setMessage("Verification failed , try again"));
   }, [token]);
 
   return (
