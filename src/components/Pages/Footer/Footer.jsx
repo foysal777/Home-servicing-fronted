@@ -46,19 +46,19 @@ export default function Footer() {
             className="w-full p-2 border rounded mb-2 text-black"
           />
           <button className="w-full bg-gradient-to-r from-pink-500 to-blue-500 text-white py-2 rounded">
-            Subscribe
+            Subscribes
           </button>
           <div className="mt-4">
             <p className="text-sm font-bold text-gray-200">Download Our App</p>
-            <div className="flex space-x-2 mt-2">
-              <img src="googleplay.png" alt="Google Play" className="w-24" />
-              <img src="appstore.png" alt="App Store" className="w-24" />
+            <div className="flex space-x-4 mt-2">
+              <img src="https://cdn-icons-png.flaticon.com/128/732/732208.png" alt="Google Play" className="w-7" />
+              <img src="https://cdn-icons-png.flaticon.com/128/906/906320.png" alt="App Store" className="w-9" />
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center mt-10 text-gray-300 text-sm">
-        <p>Copyright © 2025 - All Rights Reserved Truelysell</p>
+        <p>Copyright © 2025 - All Rights Reserved Clean-Services</p>
         <div className="flex space-x-4 text-xl">
           <FaFacebookF />
           <FaInstagram className="text-pink-400" />

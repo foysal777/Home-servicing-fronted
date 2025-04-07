@@ -93,7 +93,6 @@ const Navbar = () => {
                
 
                   <NavLink to="/my-profile" className="block px-4 py-2 hover:bg-gray-100">My Profile</NavLink>
-                  <NavLink to="/change-password" className="block px-4 py-2 hover:bg-gray-100">Change Password</NavLink>
                   <button onClick={handleLogout} className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100">Logout</button>
                 </div>
               )}
