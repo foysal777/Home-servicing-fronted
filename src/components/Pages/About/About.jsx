@@ -57,7 +57,7 @@ const About = () => {
                 Best Solution For Cleaning Services
               </h2>
               <p className="text-gray-600 mb-6">
-                Welcome to Truelysell, your premier destination for connecting with
+                Welcome to Home cleaner limited, your premier destination for connecting with
                 top-rated service providers and finding the perfect match for your
                 needs. Our platform simplifies the process of discovering,
                 evaluating, and hiring trusted professionals for a wide range of
