@@ -31,8 +31,9 @@ export default function LoginPage() {
           if (isSuperUser || isStaff) {
             navigate('/admin-dashbord'); 
           } else {
-            navigate('/'); 
-            alert("Please Refresh the webpage ")
+            window.location.href = '/';
+    
+       
           }
         }, 5000);
       } 
