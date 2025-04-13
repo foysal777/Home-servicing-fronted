@@ -175,7 +175,7 @@ const Navbar = () => {
           {authToken ? (
             <div ref={profileRef} className="relative flex items-center gap-4">
               <button
-                onClick={() => navigate("/my-bookings")}
+                onClick={() => navigate("/my-booking")}
                 className="relative bg-pink-500 p-2 rounded-md hover:bg-blue-500 transition-all duration-300"
               >
                 <ShoppingCart size={20} className="text-white" />
