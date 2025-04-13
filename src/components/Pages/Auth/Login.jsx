@@ -29,10 +29,10 @@ export default function LoginPage() {
         toast.success("Login successful! & Please Refresh web Page 🎉", { position: "top-center" });
         setTimeout(() => {
           if (isSuperUser || isStaff) {
-            navigate('/admin-dashbord'); 
+            // navigate('/admin-dashbord'); 
+            window.location.href = '/admin-dashbord'
           } else {
             window.location.href = '/';
-    
        
           }
         }, 5000);

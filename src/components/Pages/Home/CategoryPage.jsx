@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { ToastContainer, toast } from "react-toastify";
@@ -51,12 +52,47 @@ export default function CategoryPage() {
     }
   };
 
+  
   const handleBkashConfirm = () => {
-    toast.success("Payment Successful via bKash!");
-    setSelectedPayment(null);
-    setSelectedListing(null);
+    const token = localStorage.getItem("authToken");
+    console.log("Token:", token);
+  
+    if (!token || !selectedListing) {
+      toast.error("Missing token or listing data");
+      return;
+    }
+  
+    axios
+      .post(
+        "http://127.0.0.1:8000/booking/api/bookings/",
+        { 
+   
+        listing_title: selectedListing.title,
+        listing_category: selectedListing.categoryName || categoryName, 
+        listing_image: selectedListing.image,
+        price: selectedListing.price,
+        paid: true,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then(() => {
+        toast.success("Payment Successful via bKash!");
+        setSelectedPayment(null);
+        setSelectedListing(null);
+        navigate(`/category/${categoryName}`);
+      })
+      .catch((error) => {
+        console.error("API Error:", error.response?.data); 
+       
+      });
   };
-
+  
+  
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -181,6 +217,7 @@ export default function CategoryPage() {
                 Back
               </button>
               <button
+                
                 onClick={handleBkashConfirm}
                 className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
               >
