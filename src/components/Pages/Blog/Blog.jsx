@@ -87,17 +87,71 @@ const BlogPage = () => {
           </div>
 
           <aside className="fixed-sidebar">
-            <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-              <h3 className="font-bold text-lg mb-2 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 text-transparent bg-clip-text">
-                Blog Categories
-              </h3>
-              <ul className="text-pink-700 font-bold text-sm space-y-1">
-                <li>Car Wash</li>
-                <li>Electrical</li>
-                <li>Interior</li>
-              </ul>
-            </div>
-          </aside>
+  <div className="bg-white p-4 rounded-lg shadow-md mb-4">
+    <h3 className="font-bold text-lg mb-2 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 text-transparent bg-clip-text">
+      Blog Categories
+    </h3>
+    <ul className="text-pink-700 font-bold text-sm space-y-1 mb-4">
+      <li>Car Wash</li>
+      <li>Electrical</li>
+      <li>Interior</li>
+    </ul>
+
+ 
+    <div className="space-y-3">
+      <div className="flex items-center space-x-3 border border-gray-200 p-2 rounded-lg shadow-sm">
+        <img
+          src="https://img.freepik.com/free-photo/man-washing-his-car-garage_1157-26046.jpg?uid=R86563100&ga=GA1.1.1673100480.1739595697&semt=ais_hybrid&w=740"
+          alt="car-wash"
+          className="w-16 h-16 object-cover rounded"
+        />
+        <div>
+          <p className="font-semibold text-sm text-gray-800">Car Wash</p>
+          <p className="text-xs text-gray-500">Keep your car shiny clean.</p>
+        </div>
+      </div>
+
+      <div className="flex items-center space-x-3 border border-gray-200 p-2 rounded-lg shadow-sm">
+        <img
+          src="https://img.freepik.com/free-photo/portrait-positive-male-with-drilling-machine-tool-belt-his-female-colleague-holding-hardhat-having-delightful-expression_273609-7933.jpg?uid=R86563100&ga=GA1.1.1673100480.1739595697&semt=ais_hybrid&w=740"
+          alt="electrical"
+          className="w-16 h-16 object-cover rounded"
+        />
+        <div>
+          <p className="font-semibold text-sm text-gray-800">Electrical</p>
+          <p className="text-xs text-gray-500">Safe and smart wiring.</p>
+        </div>
+      </div>
+
+      <div className="flex items-center space-x-3 border border-gray-200 p-2 rounded-lg shadow-sm">
+        <img
+          src="https://img.freepik.com/free-photo/medium-shot-woman-cleaning-home_23-2150453302.jpg?uid=R86563100&ga=GA1.1.1673100480.1739595697&semt=ais_hybrid&w=740"
+          alt="interior"
+          className="w-16 h-16 object-cover rounded"
+        />
+        <div>
+          <p className="font-semibold text-sm text-gray-800">Interior Design</p>
+          <p className="text-xs text-gray-500">Make your space cozy.</p>
+        </div>
+      </div>
+
+      <div className="flex items-center space-x-3 border border-gray-200 p-2 rounded-lg shadow-sm">
+        <img
+          src="https://images.unsplash.com/photo-1589571894960-20bbe2828d0a"
+          alt="maintenance"
+          className="w-16 h-16 object-cover rounded"
+        />
+        <div>
+          <p className="font-semibold text-sm text-gray-800">Maintenance</p>
+          <p className="text-xs text-gray-500">Reliable routine checks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+
+
         </div>
       </div>
 

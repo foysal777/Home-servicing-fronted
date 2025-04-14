@@ -84,7 +84,8 @@ export default function CategoryPage() {
         toast.success("Payment Successful via bKash!");
         setSelectedPayment(null);
         setSelectedListing(null);
-        navigate(`/category/${categoryName}`);
+        // navigate(`/category/${categoryName}`);
+        navigate(`/my-booking`);
       })
       .catch((error) => {
         console.error("API Error:", error.response?.data); 
