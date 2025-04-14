@@ -67,106 +67,121 @@ const GridWithSidebar = () => {
 
   return (
     <div className="pt-24">
-      <div className="container mx-auto p-6 ">
-
-        <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold">
-            Our Major<span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text"> Services</span>
-          </h1>          <div className="flex justify-center items-center text-pink-600 mt-1">
-            <FaHome onClick={() => navigate('/')} className="mr-2 cursor-pointer" />
-            <span className="text-gray-500"> &gt; Services</span>
-          </div>
-        </div>
-        <div className="flex gap-6">
-          <div className="w-1/4 bg-gray-100 p-4 rounded-lg shadow-md">
-            <h3 className="text-lg font-bold mb-3">Filters</h3>
-
-
-            <div className="mb-4">
-              <label className="block font-medium">Category</label>
-              <input
-                type="text"
-                placeholder="Enter category (e.g., Appliance, Car Wash)"
-                className="w-full p-2 border border-pink-500 rounded mt-1"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)} // Update category as user types
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block font-medium">Keyword</label>
-              <input
-                type="text"
-                placeholder="What are you looking for?"
-                className="w-full p-2 border border-pink-500 rounded mt-1"
-                value={keyword}
-                onChange={(e) => setKeyword(e.target.value)}
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block font-medium">Location</label>
-              <input
-                type="text"
-                placeholder="Enter location"
-                className="w-full p-2 border border-pink-500 rounded mt-1"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-              />
-            </div>
-
-            <div className="mb-4">
-              <button
-                onClick={handleResetFilters}
-                className="w-full p-2 bg-pink-500 text-white rounded mt-2 hover:bg-purple-500"
-              >
-                Reset Filters
-              </button>
-            </div>
-          </div>
-          <div className="w-3/4">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-bold">Found <span className="text-pink-500">{filteredServices.length}</span> Services</h3>
-              <div className="flex items-center gap-3">
-                <select
-                  className="border border-pink-500 p-2 rounded"
-                  value={sortOption}
-                  onChange={(e) => setSortOption(e.target.value)}
-                >
-                  <option value="">Sort By</option>
-                  <option className="text-pink-500" value="price-desc">Price: High to Low</option>
-                  <option className="text-pink-500" value="alphabetical">Alphabetical (A-Z)</option>
-                </select>
-              </div>
-            </div>
-            {loading ? (
-              <p className="text-center text-lg font-bold">Loading...</p>
-            ) : filteredServices.length > 0 ? (
-              <div className={`${gridView ? "grid grid-cols-3 gap-4" : "flex flex-col gap-4"}`}>
-                {filteredServices.map((service) => (
-                  <div key={service.id} className="bg-white shadow-md rounded-lg p-4 relative">
-                    <img src={service.image} alt={service.title} className="w-full h-40 object-cover rounded" />
-                    <span className="absolute top-3 left-3 bg-pink-500 text-white px-2 py-1 text-xs rounded">{service.category}</span>
-                    <h4 className="text-lg font-bold mt-2">{service.title}</h4>
-                    <p className="text-gray-600 text-sm">{service.location}</p>
-                    <div className="flex items-center justify-between mt-2">
-                      <p className="text-lg font-bold">£{service.price}</p>
-                    </div>
-                    <button className="absolute top-3 right-3  text-gray-600 hover:text-pink-500">
-                      <Heart size={20} />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="text-center text-lg font-bold text-red-500">No services found</p>
-            )}
-          </div>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-6">
+        <h1 className="text-2xl sm:text-3xl font-bold">
+          Our Major <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">Services</span>
+        </h1>
+        <div className="flex justify-center items-center text-pink-600 mt-1 text-sm sm:text-base">
+          <FaHome onClick={() => navigate('/')} className="mr-2 cursor-pointer" />
+          <span className="text-gray-500"> &gt; Services</span>
         </div>
       </div>
-
-      <div className="pt-18">
-        <Footer></Footer>
+  
+      <div className="flex flex-col lg:flex-row gap-6">
+        {/* Sidebar */}
+        <div className="w-full lg:w-1/4 bg-gray-100 p-4 rounded-lg shadow-md">
+          <h3 className="text-lg font-bold mb-3">Filters</h3>
+  
+          <div className="mb-4">
+            <label className="block font-medium">Category</label>
+            <input
+              type="text"
+              placeholder="Enter category (e.g., Appliance)"
+              className="w-full p-2 border border-pink-500 rounded mt-1"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block font-medium">Keyword</label>
+            <input
+              type="text"
+              placeholder="What are you looking for?"
+              className="w-full p-2 border border-pink-500 rounded mt-1"
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block font-medium">Location</label>
+            <input
+              type="text"
+              placeholder="Enter location"
+              className="w-full p-2 border border-pink-500 rounded mt-1"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
+          </div>
+  
+          <div className="mb-4">
+            <button
+              onClick={handleResetFilters}
+              className="w-full p-2 bg-pink-500 text-white rounded mt-2 hover:bg-purple-500"
+            >
+              Reset Filters
+            </button>
+          </div>
+        </div>
+  
+        {/* Grid Area */}
+        <div className="w-full lg:w-3/4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2 sm:gap-0">
+            <h3 className="text-lg sm:text-xl font-bold">
+              Found <span className="text-pink-500">{filteredServices.length}</span> Services
+            </h3>
+            <div className="flex items-center gap-3">
+              <select
+                className="border border-pink-500 p-2 rounded text-sm"
+                value={sortOption}
+                onChange={(e) => setSortOption(e.target.value)}
+              >
+                <option value="">Sort By</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="alphabetical">Alphabetical (A-Z)</option>
+              </select>
+            </div>
+          </div>
+  
+          {loading ? (
+            <p className="text-center text-lg font-bold">Loading...</p>
+          ) : filteredServices.length > 0 ? (
+            <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4`}>
+              {filteredServices.map((service) => (
+                <div key={service.id} className="bg-white shadow-md rounded-lg p-4 relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-40 object-cover rounded"
+                  />
+                  <span className="absolute top-3 left-3 bg-pink-500 text-white px-2 py-1 text-xs rounded">
+                    {service.category}
+                  </span>
+                  <h4 className="text-lg font-bold mt-2">{service.title}</h4>
+                  <p className="text-gray-600 text-sm">{service.location}</p>
+                  <div className="flex items-center justify-between mt-2">
+                    <p className="text-lg font-bold">£{service.price}</p>
+                  </div>
+                  <button className="absolute top-3 right-3 text-gray-600 hover:text-pink-500">
+                    <Heart size={20} />
+                  </button>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-lg font-bold text-red-500">No services found</p>
+          )}
+        </div>
       </div>
     </div>
+  
+    <div className="pt-10">
+      <Footer />
+    </div>
+  </div>
+  
+
+
   );
 };
 

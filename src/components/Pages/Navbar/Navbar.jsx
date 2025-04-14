@@ -20,7 +20,6 @@ const Navbar = () => {
     setUserRole(role);
   }, []);
 
-  // Close profile dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (profileRef.current && !profileRef.current.contains(e.target)) {
@@ -43,7 +42,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md w-full fixed top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center p-4">
+      <div className="container mx-auto flex justify-between items-center p-4 relative">
         {/* Logo */}
         <NavLink to="/" className="flex items-center">
           <img
@@ -53,9 +52,9 @@ const Navbar = () => {
           />
         </NavLink>
 
-        {/* Mobile Menu Button */}
+        {/* Hamburger button */}
         <button
-          className="md:hidden text-gray-700"
+          className="md:hidden text-gray-700 z-50"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -166,11 +165,74 @@ const Navbar = () => {
                   Contact
                 </NavLink>
               </li>
+
+              {/* Mobile View Cart & Profile */}
+              <li className="md:hidden flex flex-col gap-2 p-4">
+                <button
+                  onClick={() => {
+                    navigate("/my-booking");
+                    setMenuOpen(false);
+                  }}
+                  className="flex items-center justify-center bg-pink-500 px-4 py-2 rounded-md text-white hover:bg-blue-500"
+                >
+                  <ShoppingCart size={20} className="mr-2" /> My Booking
+                </button>
+                <button
+                  onClick={() => {
+                    navigate("/my-profile");
+                    setMenuOpen(false);
+                  }}
+                  className="flex items-center justify-center bg-gradient-to-r from-blue-500 to-pink-500 px-4 py-2 rounded-md text-white hover:from-sky-500 hover:to-green-500"
+                >
+                  <User size={16} className="mr-2" /> My Profile
+                </button>
+                {userRole && (
+                  <button
+                    onClick={() => {
+                      navigate("/admin-dashbord");
+                      setMenuOpen(false);
+                    }}
+                    className="text-left bg-gray-100 px-4 py-2 rounded hover:bg-gray-200 text-sm"
+                  >
+                    Admin Dashboard
+                  </button>
+                )}
+                <button
+                  onClick={handleLogout}
+                  className="text-red-600 px-4 py-2 text-left hover:bg-gray-100"
+                >
+                  Logout
+                </button>
+              </li>
             </>
+          )}
+
+          {/* Sign In & Join Us for mobile */}
+          {!authToken && (
+            <li className="flex flex-col gap-2 p-4 md:hidden">
+              <button
+                onClick={() => {
+                  navigate("/login");
+                  setMenuOpen(false);
+                }}
+                className="flex items-center justify-center bg-gray-200 px-4 py-2 rounded-md text-gray-700 hover:bg-gray-300"
+              >
+                <Lock size={16} className="mr-2" /> Sign In
+              </button>
+              <button
+                onClick={() => {
+                  navigate("/register");
+                  setMenuOpen(false);
+                }}
+                className="flex items-center justify-center bg-gradient-to-r from-pink-500 to-blue-500 px-4 py-2 rounded-md text-white hover:opacity-80"
+              >
+                <User size={16} className="mr-2" /> Join Us
+              </button>
+            </li>
           )}
         </ul>
 
-        {/* Authentication Buttons */}
+        {/* Desktop Auth Buttons */}
         <div className="hidden md:flex items-center gap-4">
           {authToken ? (
             <div ref={profileRef} className="relative flex items-center gap-4">
