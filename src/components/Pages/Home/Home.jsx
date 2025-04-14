@@ -8,7 +8,7 @@ import Services from './Services';
 import PopularProviders from './PopularProvider';
 import Reviews from './Reviews';
 import HeroSection from './HeroBlk';
-
+import image from "/src/assets/p-2.png";
 
 const Home = () => {
 
@@ -101,7 +101,7 @@ const Home = () => {
             <div className="w-full md:w-1/2 relative mt-10 md:mt-0">
               <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden rounded-xl ">
                 <div className="animate-slider flex w-[200%]">
-                  <img src="src/assets/p-2.png" alt="Makeup Artist" className="w-1/2 md:w-1/2 h-2/3 object-cover" />
+                  <img src={image} alt="Makeup Artist" className="w-1/2 md:w-1/2 h-2/3 object-cover" />
                 </div>
               </div>
             </div>
