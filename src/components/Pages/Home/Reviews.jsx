@@ -6,13 +6,13 @@ export default function Reviews() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/review/reviews/")
+        fetch("https://home-service-backend-2.vercel.app/review/reviews/")
             .then((response) => response.json())
             .then((data) => setProviders(data));
     }, []);
 
     const handleDelete = (id) => {
-        fetch(`http://127.0.0.1:8000/review/reviews/${id}/`, {
+        fetch(`https://home-service-backend-2.vercel.app/review/reviews/${id}/`, {
             method: "DELETE",
         })
             .then((response) => {

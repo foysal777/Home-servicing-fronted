@@ -7,7 +7,7 @@ export default function Categories() {
   const [categories, setCategories] = useState([]); 
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/categories/api/categories/") 
+    fetch("https://home-service-backend-2.vercel.app/categories/api/categories/") 
       .then((response) => response.json())
       .then((data) => setCategories(data)) 
       .catch((error) => console.error("Error fetching categories:", error));

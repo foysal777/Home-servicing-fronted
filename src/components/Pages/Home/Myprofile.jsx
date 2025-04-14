@@ -16,7 +16,7 @@ const EditProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/user/profile/", {
+        const response = await axios.get("https://home-service-backend-2.vercel.app/user/profile/", {
           headers: {
             Authorization: `Bearer  ${authToken}`,
           },
@@ -49,7 +49,7 @@ const EditProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put("http://127.0.0.1:8000/user/profile/", userData, {
+      await axios.put("https://home-service-backend-2.vercel.app/user/profile/", userData, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },

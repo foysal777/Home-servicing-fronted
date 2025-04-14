@@ -19,7 +19,7 @@ export default function AdminService() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://127.0.0.1:8000/services/api/services/", {
+      const res = await fetch("https://home-service-backend-2.vercel.app/services/api/services/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -8,7 +8,7 @@ export default function VerifyEmail() {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/authentications/verify-email/${token}/`)
+      .get(`https://home-service-backend-2.vercel.app/authentications/verify-email/${token}/`)
       .then((res) => setMessage(res.data.message))
       .catch((err) => setMessage("Verification failed , try again"));
   }, [token]);

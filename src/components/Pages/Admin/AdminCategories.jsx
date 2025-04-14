@@ -5,7 +5,7 @@ import { Trash2 } from "lucide-react";
 const queryClient = new QueryClient();
 
 const fetchCategories = async () => {
-  const res = await fetch("http://127.0.0.1:8000/categories/api/categories/");
+  const res = await fetch("https://home-service-backend-2.vercel.app/categories/api/categories/");
   return res.json();
 };
 
@@ -22,7 +22,7 @@ function CategoryAdmin() {
 
   const addCategory = useMutation({
     mutationFn: async (newCategory) => {
-      const res = await fetch("http://127.0.0.1:8000/categories/api/categories/", {
+      const res = await fetch("https://home-service-backend-2.vercel.app/categories/api/categories/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newCategory),

@@ -12,7 +12,7 @@ const BookingTable = () => {
         console.log(token)
   
         try {
-          const response = await axios.get('http://127.0.0.1:8000/booking/api/bookings/', {
+          const response = await axios.get('https://home-service-backend-2.vercel.app/booking/api/bookings/', {
             headers: {
               Authorization: `Bearer ${token}`,
               'Content-Type': 'application/json',

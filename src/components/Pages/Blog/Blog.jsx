@@ -14,7 +14,7 @@ const BlogPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/blog/posts/")
+    axios.get("https://home-service-backend-2.vercel.app/blog/posts/")
       .then((response) => {
         const postData = response.data;
         setPosts(postData);
@@ -33,7 +33,7 @@ const BlogPage = () => {
 
   const fetchComments = (id) => {
     setLoading(true);
-    axios.get(`http://127.0.0.1:8000/blog/posts/${id}/comments/`)
+    axios.get(`https://home-service-backend-2.vercel.app/blog/posts/${id}/comments/`)
       .then(response => {
         setComments(response.data);
       })
@@ -46,7 +46,7 @@ const BlogPage = () => {
   const handlePostComment = () => {
     if (!newComment.name.trim() || !newComment.email.trim() || !newComment.content.trim()) return;
     setPosting(true);
-    axios.post(`http://127.0.0.1:8000/blog/posts/${postId}/comments/`, {
+    axios.post(`https://home-service-backend-2.vercel.app/blog/posts/${postId}/comments/`, {
       post: postId,
       name: newComment.name,
       email: newComment.email,

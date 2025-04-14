@@ -17,7 +17,7 @@ const GridWithSidebar = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://127.0.0.1:8000/services/api/services/`)
+    fetch(`https://home-service-backend-2.vercel.app/services/api/services/`)
       .then((response) => response.json())
       .then((data) => {
         setServices(data);

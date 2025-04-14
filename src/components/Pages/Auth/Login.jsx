@@ -15,7 +15,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/authentications/login/', { email, password });
+      const response = await axios.post('https://home-service-backend-2.vercel.app/authentications/login/', { email, password });
 
       if (response.data.access) {
        localStorage.setItem('authToken', response.data.access);

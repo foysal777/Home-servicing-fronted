@@ -24,7 +24,7 @@ export default function RegisterPage() {
     }
 
     try {
-      await axios.post("http://127.0.0.1:8000/authentications/register/", formData);
+      await axios.post("https://home-service-backend-2.vercel.app/authentications/register/", formData);
       toast.success("Registration successful! Check your email.");
     } catch (error) {
       toast.error("Registration failed. Please try again.");

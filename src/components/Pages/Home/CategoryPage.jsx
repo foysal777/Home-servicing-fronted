@@ -18,7 +18,7 @@ export default function CategoryPage() {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`http://127.0.0.1:8000/categoriesPage/api/category/${categoryName}/`)
+    fetch(`https://home-service-backend-2.vercel.app/categoriesPage/api/category/${categoryName}/`)
       .then((response) => response.json())
       .then((data) => {
         setCategoryDetails(data);
@@ -34,7 +34,7 @@ export default function CategoryPage() {
     const stripe = await stripePromise;
 
     const response = await fetch(
-      "http://127.0.0.1:8000/categoriesPage/create-checkout-session/",
+      "https://home-service-backend-2.vercel.app/categoriesPage/create-checkout-session/",
       {
         method: "POST",
         headers: {
@@ -64,7 +64,7 @@ export default function CategoryPage() {
   
     axios
       .post(
-        "http://127.0.0.1:8000/booking/api/bookings/",
+        "https://home-service-backend-2.vercel.app/booking/api/bookings/",
         { 
    
         listing_title: selectedListing.title,
@@ -84,8 +84,8 @@ export default function CategoryPage() {
         toast.success("Payment Successful via bKash!");
         setSelectedPayment(null);
         setSelectedListing(null);
-        // navigate(`/category/${categoryName}`);
-        navigate(`/my-booking`);
+         navigate(`/category/${categoryName}`);
+       
       })
       .catch((error) => {
         console.error("API Error:", error.response?.data); 
