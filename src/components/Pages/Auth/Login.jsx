@@ -38,9 +38,6 @@ export default function LoginPage() {
         }, 3000);
       }
 
-
-
-
       else {
         toast.error("Failed to receive a valid token.", { position: "top-center" });
       }
@@ -83,7 +80,7 @@ export default function LoginPage() {
         <div className="relative">
           <input
             type="password"
-            placeholder="************"
+            placeholder="***********"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-4 py-2 border border-pink-500 rounded-md bg-gray-100 text-gray-600"
@@ -110,12 +107,12 @@ export default function LoginPage() {
     {/* Credential Info - Small Font */}
     <div className="mt-4 text-xs text-gray-500">
       <div className="mb-2">
-        <p className='text-pink-500'><strong>Normal user</strong></p>
+        <p className='text-pink-500'><strong>Normal User</strong></p>
         <p>Email: foysal.cse11@gmail.com</p>
         <p>Password: Foy56##sal</p>
       </div>
       <div>
-        <p  className='text-pink-500'><strong>Admin user</strong></p>
+        <p  className='text-pink-500'><strong>Admin User</strong></p>
         <p>Email: admin@gmail.com</p>
         <p>Password: 123</p>
       </div>
